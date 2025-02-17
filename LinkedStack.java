@@ -34,19 +34,22 @@ public int pop() {
     top = top.next;
     return data;
 }
-     public static void main(String[] args) {
+     public static void main(String[] args)
+      {
         LinkedStack stack = new LinkedStack();
         Scanner scanner = new Scanner(System.in);
         Scanner sc = new Scanner(System.in);
         int ch,data, c;
         System.out.println("ENTER INTEGERS TO CREATE NODES (ENTER A NON-INTEGER TO EXIT):");
-        while (scanner.hasNext()) {
+        while (scanner.hasNext())
+         {
         if(scanner.hasNextInt())
           {
        data = scanner.nextInt();
        stack.push(data);
         }
-        else{
+        else
+        {
           String temp=scanner.next();
           System.out.println("STACK USING LINKED LIST HAS BEEN CREATED");
           stack.displayStack();
