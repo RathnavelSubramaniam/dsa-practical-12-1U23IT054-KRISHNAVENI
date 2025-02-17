@@ -14,31 +14,42 @@ public class LinkedStack {
         this.top = null; 
         
     }
-    public boolean isEmpty()
-    {
-        // TYPE YOUR CODE HERE
+    public boolean isEmpty() {
+    if (top == null) {
+        return true;
     }
-    public void push(int data) 
-    {
-         // TYPE YOUR CODE HERE    
+    return false;
 }
-    public int pop() 
-    {
-        // TYPE YOUR CODE HERE
+public void push(int data) {
+    Node newNode = new Node(data);
+    newNode.next = top;
+    top = newNode;
+}
+public int pop() {
+    if (isEmpty()) {
+        System.out.println("Stack Underflow");
+        return -1; // or any other default value
     }
-     public static void main(String[] args) {
+    int data = top.data;
+    top = top.next;
+    return data;
+}
+     public static void main(String[] args)
+      {
         LinkedStack stack = new LinkedStack();
         Scanner scanner = new Scanner(System.in);
         Scanner sc = new Scanner(System.in);
         int ch,data, c;
         System.out.println("ENTER INTEGERS TO CREATE NODES (ENTER A NON-INTEGER TO EXIT):");
-        while (scanner.hasNext()) {
+        while (scanner.hasNext())
+         {
         if(scanner.hasNextInt())
           {
        data = scanner.nextInt();
        stack.push(data);
         }
-        else{
+        else
+        {
           String temp=scanner.next();
           System.out.println("STACK USING LINKED LIST HAS BEEN CREATED");
           stack.displayStack();
